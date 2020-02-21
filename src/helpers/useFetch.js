@@ -1,26 +1,27 @@
 import React, {useEffect, useState} from 'react';
 
 const useFetch = (url, append) => {
-    const [data, setData] = useState();
+    const [data, setData] = useState('');
     const [error, setError] = useState();
+    const [nextPage, setNextPage] = useState();
 
     useEffect(()=>{
         const fetchData = async (url) => {
-            try{
-                const data = await fetch(url);
-                const {results} = await data.json();
-                const res = append ? [...data, ...results] : results;
+            try {
+                const dataFetch = await fetch(url);
+                const {results, next} = await dataFetch.json();
+                const res = (append && data) ? [...data , ...results] : results;
                 setData(res);
-                console.log(results);
+                setNextPage(next);
             }
             catch (error){
                 setError(error);
             }
         }
         fetchData(url);
-    }, []);
+    }, [url]);
 
-    return [data, error];
+    return [data, error, nextPage];
 }
 
 export default useFetch;

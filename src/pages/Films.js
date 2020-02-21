@@ -4,19 +4,24 @@ import FilmsView from "../components/Films/Films-view";
 import useFetch from "../helpers/useFetch";
 import {FILMS_URL} from "../variables";
 import Error from "../components/Error/Error";
+import Button from "../elements/button";
 
 
 const Films = () => {
-    const [data, error] = useFetch(FILMS_URL);
+    const [urls, setUrls] = useState(FILMS_URL);
+    const [data, error, nextPage] = useFetch(urls, true);
 
     const clickHandler = () => {
-        console.log('clicked');
+        setUrls(urls);
     }
 
     return (
         <>
             <div>Films</div>
-            <FilmsView items={data} error={error} clickHandler={clickHandler}/>
+            <FilmsView items={data} error={error}/>
+            {nextPage &&
+                <Button classes="btn" text="Load more" clickHandler={clickHandler} />}
+
         </>
     );
 }

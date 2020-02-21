@@ -1,18 +1,24 @@
 import React, {useEffect, useState} from 'react';
-import Loading from "../components/Loading/Loading";
 import PeopleView from "../components/People/People-view";
 import useFetch from "../helpers/useFetch";
 import {PEOPLE_URL} from "../variables";
-import Error from "../components/Error/Error";
+import Button from "../elements/button";
 
 
 const People = () => {
-    const [data, error] = useFetch(PEOPLE_URL);
+    const [urls, setUrls] = useState(PEOPLE_URL);
+    const [data, error, nextPage] = useFetch(urls, true);
+
+    const clickHandler = () => {
+        setUrls(nextPage);
+    }
 
     return (
         <>
             <div>People</div>
-            <PeopleView items={data} />
+            <PeopleView items={data} error={error}/>
+            {nextPage &&
+                <Button classes="btn" text="Load more" clickHandler={clickHandler} />}
         </>
     );
 }

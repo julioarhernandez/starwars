@@ -3,7 +3,7 @@ import Button from "../../elements/button";
 import Error from "../Error/Error";
 import Loading from "../Loading/Loading";
 
-const FilmsView = ({items, error, clickHandler}) => {
+const FilmsView = ({items, error}) => {
 
     if (error){
        return <Error text="Films" />
@@ -18,9 +18,6 @@ const FilmsView = ({items, error, clickHandler}) => {
                 return  <li key={index}>{itm.title}</li>
             })}
             </ul>
-            <div>
-                <Button classes="btn" text="Load more" clickHandler={clickHandler} />
-            </div>
         </div>
     );
 }

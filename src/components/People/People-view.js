@@ -2,7 +2,7 @@ import React from 'react';
 import Error from "../Error/Error";
 import Loading from "../Loading/Loading";
 
-const PeopleView = ({items, error, clickHandler}) => {
+const PeopleView = ({items, error}) => {
 
     if (error){
        return <Error text="People" />
