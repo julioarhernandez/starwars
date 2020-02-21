@@ -1,0 +1,8 @@
+a{
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    &.active{
+        color: white;
+        background-color: darkblue;
+    }
+}
