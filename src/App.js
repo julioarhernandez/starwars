@@ -7,12 +7,14 @@ import Home from "./pages/Home";
 import Films from "./pages/Films";
 import Navigation from "./components/Navlinks/Navigation";
 import Footer from "./components/Footer/Footer";
+import LogoView from "./components/Logo/Logo-view";
 
 function App() {
   return (
    <Router>
        <div className="header">
             <Navigation />
+            <LogoView />
        </div>
        <div className="body">
          <Switch>

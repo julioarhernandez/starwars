@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700&display=swap');
+@import "helpers/mixins.scss";
 //variable definitions
 $black: #000000;
 $black-light: rgba(var($black), 0.8);
@@ -17,8 +19,17 @@ $white-lightest: rgba(var($white), 0.4);
     position: sticky;
     background-color: $white;
     padding: 1rem;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
     top: 0;
+    z-index: 1;
+    display: inline-flex;
+    justify-content: space-between;
 }
 .body{
+    font-family: 'Roboto Condensed';
     flex: 1;
+    max-width: 1024px;
+    margin: 0 auto;
 }

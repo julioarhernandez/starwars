@@ -1,0 +1,16 @@
+$breakpoints: (
+    'sm': 767.9px,
+    'md': 768px
+) !default;
+
+@mixin breakpoint($bp){
+    @if map-has_key($breakpoints, $bp){
+        $minOrMax: min-width;
+        @if ($bp == 'sm') {
+            $minOrMax: 'max-width';
+        }
+        @media (#{$minOrMax}: map-get($breakpoints, $bp)){
+            @content;
+        }
+    }
+}
