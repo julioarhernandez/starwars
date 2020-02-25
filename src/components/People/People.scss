@@ -1,18 +1,27 @@
 @import "../../helpers/mixins";
 
 .People {
+    $a: &;
     position: relative;
     display: flex;
     &_card{
         display: grid;
-        transition: transform, padding, 0.5s;
+        transition-property: transform, padding, box-shadow;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in;
         grid-template-columns: repeat(4, 1fr);
         padding: 1rem;
         &:hover,
         &:active{
             transform: scale(1.1);
             padding-left: 2rem;
-            transition: transform, padding,  0.5s;
+            transition-property: transform, padding, box-shadow;
+            transition-duration: 0.3s;
+            transition-timing-function: ease-in;
+            #{$a}_figure{
+                transition: box-shadow 0.5s ease-in;
+                box-shadow: -10px 8px 25px 0px rgba(0, 0, 0, 0.3);
+            }
         }
     }
     &_item {
