@@ -1,9 +1,7 @@
-import React, {useEffect, useState} from 'react';
-import Loading from "../components/Loading/Loading";
+import React, {useState} from 'react';
 import FilmsView from "../components/Films/Films-view";
 import useFetch from "../helpers/useFetch";
 import {FILMS_URL} from "../variables";
-import Error from "../components/Error/Error";
 import Button from "../elements/button";
 
 
@@ -17,7 +15,7 @@ const Films = () => {
 
     return (
         <>
-            <div>Films</div>
+             <div className="Page_header">Films</div>
             <FilmsView items={data} error={error}/>
             {nextPage &&
                 <Button classes="btn" text="Load more" clickHandler={clickHandler} />}
@@ -27,4 +25,8 @@ const Films = () => {
 }
 
 export default Films;
+
+
+
+
 

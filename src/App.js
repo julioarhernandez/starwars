@@ -6,15 +6,13 @@ import People from "./pages/People";
 import Home from "./pages/Home";
 import Films from "./pages/Films";
 import Navigation from "./components/Navlinks/Navigation";
-import Footer from "./components/Footer/Footer";
 import LogoView from "./components/Logo/Logo-view";
 
 function App() {
   return (
    <Router>
        <div className="header">
-            <Navigation />
-            <LogoView />
+        <LogoView />
        </div>
        <div className="body">
          <Switch>
@@ -30,7 +28,7 @@ function App() {
          </Switch>
        </div>
        <div className="footer">
-        <Footer/>
+        <Navigation />
        </div>
    </Router>
   );

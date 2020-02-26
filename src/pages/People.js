@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import PeopleView from "../components/People/People-view";
 import useFetch from "../helpers/useFetch";
 import {PEOPLE_URL} from "../variables";
@@ -15,7 +15,7 @@ const People = () => {
 
     return (
         <>
-            <div>People</div>
+            <div className="Page_header">People</div>
             <PeopleView items={data} error={error}/>
             {nextPage &&
                 <Button classes="btn" text="Load more" clickHandler={clickHandler} />}

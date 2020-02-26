@@ -1,0 +1,12 @@
+//variable definitions
+$black: #000000;
+$black-light: rgba(var($black), 0.8);
+$black-lighter: rgba(var($black), 0.6);
+$black-lightest: rgba(var($black), 0.4);
+$white: #ffffff;
+$white-light: rgba(var($white), 0.8);
+$white-lighter: rgba(var($white), 0.6);
+$white-lightest: rgba(var($white), 0.4);
+$gold: rgb(255,215,0);
+
+$primary: $gold;
