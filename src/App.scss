@@ -34,8 +34,42 @@
     padding: 1rem;
     text-align: center;
 }
+.Load_button{
+    text-align: center;
+    padding: 1rem;
+}
+.btn{
+    &.btn-load{
+        padding: 0;
+        color: white;
+        background-color: black;
+        border-radius: 50%;
+        height: 5rem;
+        width: 5rem;
+        &:after{
+            content: '+';
+            font-size: 4rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: monospace;
+
+        }
+        &:hover{
+            transition: box-shadow 0.5s ease-out, transform 0.2s ease-in;
+            box-shadow: -10px 8px 25px 0px rgba(0, 0, 0, 0.3);
+            transform: scale(1.1);
+        }
+        &:focus{
+            outline: none;
+        }
+    }
+}
 .List_item{
     &:not(:last-child) {
         margin-bottom: 1rem;
     }
+}
+.sr-only{
+    display: none;
 }

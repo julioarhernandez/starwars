@@ -4,8 +4,7 @@ import {TweenLite} from "gsap";
 import Loading from "../Loading/Loading";
 import './Films.scss';
 
-const FilmsView = ({items, error}) => {
-    const [isLoading, setIsloading] = useState();
+const FilmsView = ({items, error, isLoading}) => {
     let filmItem = useRef([]);
     let filmItemFigure = useRef([]);
     let filmItemDescription = useRef([]);
@@ -27,7 +26,7 @@ const FilmsView = ({items, error}) => {
 
     useEffect(() => {
         TweenLite.from(filmItem.current, 0.5, {x: 500,  opacity: 0, scale: 0.5, stagger: 0.1});
-        setIsloading( !!items);
+        // setIsloading( !!items);
     }, [items]);
 
     if (error){

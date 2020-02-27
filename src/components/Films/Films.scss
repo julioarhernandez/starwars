@@ -81,14 +81,15 @@
     }
     ul {
         display: flex;
+        justify-content: center;
         flex-wrap: wrap;
         list-style: none;
         padding: 0;
         margin: 0;
         li {
             @include breakpoint('md'){
-                flex: 1 0 percentage(4/12);
-                max-width: percentage(4/12);
+                flex: 1 0 percentage(5/12);
+                max-width: percentage(5/12);
             }
             @include breakpoint('sm'){
                 flex: 1 1 100%;

@@ -4,8 +4,7 @@ import {TweenLite} from "gsap";
 import Loading from "../Loading/Loading";
 import './People.scss';
 
-const PeopleView = ({items, error}) => {
-    const [isLoading, setIsloading] = useState();
+const PeopleView = ({items, error, isLoading}) => {
     let peopleItem = useRef([]);
 
     const convertNames = (name) => {
@@ -14,8 +13,8 @@ const PeopleView = ({items, error}) => {
     }
 
     useEffect(() => {
+        console.log(items);
         TweenLite.from(peopleItem.current, 0.5, {x: 500,  opacity: 0, scale: 0.5, stagger: 0.1});
-        setIsloading( !!items);
     }, [items]);
 
     if (error){
@@ -39,7 +38,7 @@ const PeopleView = ({items, error}) => {
                                 <div className="People_item"><label>Mass:</label> {itm.mass}</div>
                             </div>
                             <div className="People_figure">
-                                <img src={convertNames(itm.name)} alt="tropper" title="Default image" className="People_image"/>
+                                <img src={convertNames(itm.name)} alt="Person Image" title="Default image" className="People_image"/>
                             </div>
                         </div>
                     </li>
