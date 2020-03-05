@@ -1,0 +1,90 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.People {
+    $a: &;
+    position: relative;
+    display: flex;
+    padding-bottom: 2rem;
+    &_card{
+        display: grid;
+        position: relative;
+        transition-property: transform, padding, box-shadow;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 2rem 1rem;
+        overflow: hidden;
+        &:hover,
+        &:active{
+            transform: scale(1.02);
+            padding-left: 2rem;
+            transition-property: transform, padding, box-shadow;
+            transition-duration: 0.3s;
+            transition-timing-function: ease-in;
+            #{$a}_figure{
+                transition: box-shadow 0.5s ease-in;
+                box-shadow: -10px 8px 25px 0px rgba(0, 0, 0, 0.3);
+            }
+        }
+    }
+    &_item {
+        &:not(:last-child) {
+            margin-bottom: .3rem;
+        }
+    }
+    &_header{
+        grid-column: 1/4;
+        grid-row: 1;
+        z-index: 1;
+    }
+    &_title{
+        margin-bottom: 0.5rem;
+    }
+    &_figure {
+        padding: 1rem;
+        border-radius: 5px;
+        background: $gold;
+        background: linear-gradient(141deg, rgba(255,215,0,1) 41%, rgba(255,171,0,1) 100%);
+        height: 10rem;
+        grid-column: 2/5;
+        grid-row: 1;
+        > img{
+            position: absolute;
+            bottom: 0;
+            width: auto;
+            height: 100%;
+            right: 0;
+        }
+    }
+    //&_image{
+    //    object-fit: none;
+    //    width: 100%;
+    //    height: 100%;
+    //}
+    label {
+        display: block;
+        font-weight: bold;
+        font-size: 0.7rem;
+        color: rgba(black, 0.7);
+
+    }
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+            @include breakpoint('md'){
+                flex: 1 0 percentage(4/12);
+                max-width: percentage(4/12);
+            }
+            @include breakpoint('sm'){
+                flex: 1 1 100%;
+            }
+
+        }
+    }
+
+}

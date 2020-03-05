@@ -1,24 +1,75 @@
-//variable definitions
-$black: #000000;
-$black-light: rgba(var($black), 0.8);
-$black-lighter: rgba(var($black), 0.6);
-$black-lightest: rgba(var($black), 0.4);
-$white: #ffffff;
-$white-light: rgba(var($white), 0.8);
-$white-lighter: rgba(var($white), 0.6);
-$white-lightest: rgba(var($white), 0.4);
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
+@import "styles/mixins";
+@import "/styles/variables";
 
 #root{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+    //display: flex;
+    //flex-direction: column;
+    //height: 100vh;
 }
-.header{
-    position: sticky;
+.footer{
+    position: fixed;
+    font-family: 'Roboto Condensed';
     background-color: $white;
     padding: 1rem;
-    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    max-width: 1024px;
+    margin: 0 auto;
 }
 .body{
-    flex: 1;
+    font-family: 'Roboto Condensed';
+    max-width: 1024px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-bottom: 10rem;
+}
+.Page_header{
+    font-size: 5rem;
+    text-transform: uppercase;
+    letter-spacing: -0.3rem;
+    padding: 1rem;
+    text-align: center;
+}
+.Load_button{
+    text-align: center;
+    padding: 1rem;
+}
+.btn{
+    &.btn-load{
+        padding: 0;
+        color: white;
+        background-color: black;
+        border-radius: 50%;
+        height: 5rem;
+        width: 5rem;
+        &:after{
+            content: '+';
+            font-size: 4rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: monospace;
+
+        }
+        &:hover{
+            transition: box-shadow 0.5s ease-out, transform 0.2s ease-in;
+            box-shadow: -10px 8px 25px 0px rgba(0, 0, 0, 0.3);
+            transform: scale(1.1);
+        }
+        &:focus{
+            outline: none;
+        }
+    }
+}
+.List_item{
+    &:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+}
+.sr-only{
+    display: none;
 }
