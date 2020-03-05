@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import Error from "../Error/Error";
-import {TweenLite} from "gsap";
+import TweenLite from "gsap";
 import Loading from "../Loading/Loading";
 import './Films.scss';
 

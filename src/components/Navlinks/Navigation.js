@@ -1,5 +1,5 @@
 import React, {useEffect, useRef} from 'react';
-import {TweenLite} from "gsap";
+import TweenLite from "gsap";
 import {NavLink} from "react-router-dom";
 
 import './Navigation.scss';

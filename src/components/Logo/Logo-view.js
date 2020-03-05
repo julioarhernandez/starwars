@@ -1,5 +1,5 @@
 import React, {useEffect, useRef} from 'react';
-import {TweenLite} from "gsap";
+import TweenLite from "gsap";
 import logo from "../../images/SW.svg";
 import "./Logo.scss";
  

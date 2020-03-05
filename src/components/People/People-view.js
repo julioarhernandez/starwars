@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import Error from "../Error/Error";
-import {TweenLite} from "gsap";
+import TweenLite from "gsap";
 import Loading from "../Loading/Loading";
 import './People.scss';
 
@@ -13,7 +13,7 @@ const PeopleView = ({items, error, isLoading}) => {
     }
 
     useEffect(() => {
-        console.log(items);
+        // console.log(items);
         TweenLite.from(peopleItem.current, 0.5, {x: 500,  opacity: 0, scale: 0.5, stagger: 0.1});
     }, [items]);
 
