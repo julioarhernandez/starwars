@@ -13,7 +13,6 @@ const PeopleView = ({items, error, isLoading}) => {
     }
 
     useEffect(() => {
-        // console.log(items);
         TweenLite.from(peopleItem.current, 0.5, {x: 500,  opacity: 0, scale: 0.5, stagger: 0.1});
     }, [items]);
 
