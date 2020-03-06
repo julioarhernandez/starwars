@@ -6,12 +6,8 @@ const Loading = ({text, isLoading}) => {
     let thisLoading = useRef();
 
     useEffect(()=>{
-        if (isLoading){
-            TweenLite.to(thisLoading.current, 0.3, {height: '100%', ease: "power3.out"});
-        }
-        else{
-            TweenLite.to(thisLoading.current, 0.3, {height: 0, ease: "power3.out"});
-        }
+        const height = isLoading ? '100%' : 0;
+        TweenLite.to(thisLoading.current, 0.3, {height: height, ease: "power3.out"});
     },[isLoading]);
 
     return (
