@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Films from "./pages/Films";
 import Navigation from "./components/Navlinks/Navigation";
 import LogoView from "./components/Logo/Logo-view";
+import Player from "./components/Player/Player";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
          </Switch>
        </div>
        <div className="footer">
+        <Player/>
         <Navigation />
        </div>
    </Router>

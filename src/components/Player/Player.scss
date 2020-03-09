@@ -1,0 +1,59 @@
+.Player {
+    &_wrapper {
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-radius: 5px;
+    }
+    &_player {
+        //display: none;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+    &_controls {
+        display: flex;
+        flex-direction: row;
+        progress {
+            width: 100%;
+        }
+    }
+    &_items {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    &_item{
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+    &_list {
+        padding: 1rem;
+    }
+    &_close {
+        display: block;
+        text-align: right;
+        padding: 1rem 1rem .5rem;
+    }
+    &_button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 1rem;
+        color: white;
+    }
+    &_media {
+        display: none;
+    }
+    &_inner {
+        background-color: gold;
+        border-radius: 5px;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        bottom: -36px;
+    }
+}

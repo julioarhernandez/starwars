@@ -1,9 +1,12 @@
 import React from 'react';
+import HomeView from "../components/Home/Home-view";
 
 
 const Home = () => {
     return (
-        <div>Home</div>
+        <>
+            <HomeView />
+        </>
     );
 }
 

@@ -9,7 +9,7 @@
     //height: 100vh;
 }
 .footer{
-    position: fixed;
+    position: sticky;
     font-family: 'Roboto Condensed';
     background-color: $white;
     padding: 1rem;
@@ -19,13 +19,19 @@
     z-index: 1;
     max-width: 1024px;
     margin: 0 auto;
+    .Player{
+        position: absolute;
+        top: -40px;
+        left: 20px;
+    }
+
 }
 .body{
     font-family: 'Roboto Condensed';
     max-width: 1024px;
     margin: 0 auto;
     overflow: hidden;
-    padding-bottom: 10rem;
+    //padding-bottom: 10rem;
 }
 .Page_header{
     font-size: 5rem;

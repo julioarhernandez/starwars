@@ -1,0 +1,22 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.Home {
+    height: calc(100vh - 206px);
+    background-color: $black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &_logo {
+        width: 100%;
+    }
+    //&_player{
+    //    display: none;
+    //}
+    //&_controls{
+    //    button{
+    //        color: white;
+    //    }
+    //}
+}
