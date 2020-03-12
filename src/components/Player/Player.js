@@ -22,7 +22,7 @@ const Player = () => {
     };
 
     const handleShowPlayWindow = () => {
-        TweenLite.to(PlayerInnerWindow.current, 0.4, {width: "335px", height: "190px", ease: "back.out(1.1)"});
+        TweenLite.to(PlayerInnerWindow.current, 0.4, {width: "335px", height: "190px", boxShadow: "-10px 8px 25px 0 rgba(0,0,0,.3)", ease: "back.out(1.1)"});
     };
 
     const handleCloseWindow = () => {
@@ -104,7 +104,6 @@ const Player = () => {
                     </div>
                 </div>
             </div>
-
         </div>
     );
 }
