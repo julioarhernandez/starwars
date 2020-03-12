@@ -17,7 +17,7 @@ function App() {
        </div>
        <div className="body">
          <Switch>
-           <Route path={"/persons/"}>
+           <Route path={"/people/"}>
              <People/>
            </Route>
           <Route path={"/films/"}>

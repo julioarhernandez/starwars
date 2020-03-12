@@ -7,9 +7,11 @@ const HomeView = () => {
   return (
     <div className="Home">
       <div className="Home_image">
-        {/*<img src={logo} className="Home_logo" alt="SW logo"/>*/}
+        <img src={logo} className="Home_logo" alt="SW logo"/>
       </div>
-
+        <div className="Home_text">
+            The API Awakens
+        </div>
     </div>
   );
 };

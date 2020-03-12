@@ -6,6 +6,9 @@
     position: relative;
     display: flex;
     padding-bottom: 2rem;
+    max-width: 1024px;
+    margin: 0 auto;
+    overflow: hidden;
     &_card{
         display: grid;
         position: relative;

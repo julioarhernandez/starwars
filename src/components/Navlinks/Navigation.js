@@ -16,9 +16,9 @@ const Navigation = (props) => {
                 <img src="../images/icon/ds.png" className="Navigation_icon" />
                 Home
             </NavLink>
-            <NavLink activeClassName="active" to={'/persons/'} ref={div => thisNav.current[1] = div}>
+            <NavLink activeClassName="active" to={'/people/'} ref={div => thisNav.current[1] = div}>
                 <img src="../images/icon/luke_skywalker.png" className="Navigation_icon" />
-                Persons</NavLink>
+                People</NavLink>
             <NavLink activeClassName="active" to={'/films/'} ref={div => thisNav.current[2] = div}>
                 <img src="../images/icon/movies.png" className="Navigation_icon" />
                 Films</NavLink>
