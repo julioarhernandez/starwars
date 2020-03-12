@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef} from 'react';
 import Error from "../Error/Error";
 import TweenLite from "gsap";
 import Loading from "../Loading/Loading";
@@ -12,16 +12,6 @@ const FilmsView = ({items, error, isLoading}) => {
     const convertNames = (name) => {
         const lowerNoSpace = (typeof name == 'string') && name.replace(/\s+/g, '_').toLowerCase();
         return `../images/films/${lowerNoSpace}.jpg`;
-    }
-
-    const showDescription = (index) => {
-        const thisDescription = filmItemDescription.current[index];
-        // TweenLite.to(thisDescription, 1, { height: '100%'});
-    }
-
-   const hideDescription = (index) => {
-        const thisDescription = filmItemDescription.current[index];
-        // TweenLite.to(thisDescription, 1, { height: 0});
     }
 
     useEffect(() => {
@@ -41,7 +31,7 @@ const FilmsView = ({items, error, isLoading}) => {
             <ul>
             {items && items.map((itm,index)=> {
                 return  <li className="List_item" key={`film${index}`} ref={ li => filmItem.current[index] = li }>
-                        <div className="Films_card" onMouseEnter={() => showDescription(index)} onMouseLeave={() => hideDescription(index)}>
+                        <div className="Films_card">
                             <div className="Films_header">
                                 <div className="Films_item">
                                     <h2 className="Films_title">{itm.title}</h2>

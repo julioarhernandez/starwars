@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import logo from "../../images/SW.svg";
 import "./Home.scss";
 

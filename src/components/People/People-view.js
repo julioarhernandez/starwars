@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef} from 'react';
 import Error from "../Error/Error";
 import TweenLite from "gsap";
 import Loading from "../Loading/Loading";
@@ -37,7 +37,7 @@ const PeopleView = ({items, error, isLoading}) => {
                                 <div className="People_item"><label>Mass:</label> {itm.mass}</div>
                             </div>
                             <div className="People_figure">
-                                <img src={convertNames(itm.name)} alt="Person Image" title="Default image" className="People_image"/>
+                                <img src={convertNames(itm.name)} alt="People" title="People" className="People_image"/>
                             </div>
                         </div>
                     </li>

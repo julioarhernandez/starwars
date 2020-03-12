@@ -14,6 +14,17 @@
     &_controls {
         display: flex;
         flex-direction: row;
+        .pause{
+            display: none;
+        }
+        &.playing{
+            .pause{
+                display: block;
+            }
+            .play{
+                display: none;
+            }
+        }
         progress {
             width: 100%;
         }
@@ -25,7 +36,16 @@
     }
     &_item{
         &:not(:last-child) {
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+    &_info{
+        flex: 1;
+        margin-left: 1rem;
+    }
+    &_title{
+        > span{
+            display: block;
         }
     }
     &_list {
@@ -34,9 +54,9 @@
     &_close {
         display: block;
         text-align: right;
-        padding: 1rem 1rem .5rem;
+        padding: 1rem 1rem 0;
     }
-    &_button {
+    &_open {
         position: absolute;
         top: 0;
         left: 0;
@@ -55,5 +75,11 @@
         position: absolute;
         left: 0;
         bottom: -36px;
+    }
+    &--font-small{
+        font-size: 0.6rem;
+    }
+    &--font-medium{
+        font-size: 0.8rem;
     }
 }

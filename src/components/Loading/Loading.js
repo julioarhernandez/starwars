@@ -13,7 +13,7 @@ const Loading = ({text, isLoading}) => {
     return (
         <div className="loading"  ref={el => thisLoading.current = el}>
             <div className="loading_icon" >
-                <img className="bounceIn" src="../images/icon/dark-light.png" alt="Loading..." title="Loading..."/>
+                <img className="bounceIn" src="../images/icon/dark-light-bw.png" alt="Loading..." title="Loading..."/>
             </div>
             <div className="loading_content">
                 Loading {text}
