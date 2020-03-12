@@ -1,10 +1,13 @@
 import React, { useRef, useState} from 'react';
 import TweenLite from "gsap";
 import ReactPlayer from "react-player";
+import Play from "../../images/player/play.png";
+import Pause from "../../images/player/pause-black.png";
+import Sound from "../../images/player/sound.png";
 import './Player.scss';
 
 const Player = () => {
-    const playerUrlList = ["https://www.youtube.com/watch?v=ZTg6hg1miFg","https://www.youtube.com/watch?v=4NRXx6U8ABQ"];
+    const playerUrlList = ["https://www.youtube.com/watch?v=-bzWSJG93P8", "https://www.youtube.com/watch?v=ZTg6hg1miFg"];
     const [playing, setPlaying] = useState([false, false]);
     const [player, setPlayer] = useState(0);
     const [playedArray, setPlayedArray] = useState([0,0]);
@@ -19,7 +22,7 @@ const Player = () => {
     };
 
     const handleShowPlayWindow = () => {
-        TweenLite.to(PlayerInnerWindow.current, 0.4, {width: "335px", height: "180px", ease: "back.out(1.1)"});
+        TweenLite.to(PlayerInnerWindow.current, 0.4, {width: "335px", height: "190px", ease: "back.out(1.1)"});
     };
 
     const handleCloseWindow = () => {
@@ -41,7 +44,7 @@ const Player = () => {
         <div className="Player">
             <div className="Player_wrapper">
                 <div className="Player_open" ref={elm => PlayerOpenWindow.current = elm} onClick={handleShowPlayWindow}>
-                    Play
+                    <img src={Sound} alt="Play"/>
                 </div>
                 <div className="Player_inner" ref={elm => PlayerInnerWindow.current = elm}>
                     <div className="Player_close Player--font-medium" ref={elm => PlayerCloseButton.current = elm} onClick={handleCloseWindow}>
@@ -53,15 +56,14 @@ const Player = () => {
                                 <div className={`Player_controls${playing[0] ? ' playing': ''}`}>
                                     <div className="Player_play">
                                         <button className="Player_button" onClick={() => handlePlay(0)}>
-                                            <span className="play">Play me 1</span>
-                                            <span className="pause">Pause me 1</span>
+                                            <span className="play"><img src={Play} alt="Play"/></span>
+                                            <span className="pause"><img src={Pause} alt="Play"/></span>
                                         </button>
                                     </div>
                                     <div className="Player_info">
-
                                         <div className="Player_title">
-                                            <span>Title of the song is this one</span>
-                                            <span className="Player--font-medium"><strong>by:</strong>Strongine asdnasd</span>
+                                            <span>The Imperial March</span>
+                                            <span className="Player--font-medium Player--font-clear"><strong>by: </strong>John Williams</span>
                                         </div>
                                         <progress max={1} value={playedArray[0]}></progress>
                                     </div>
@@ -78,19 +80,17 @@ const Player = () => {
                                 <div className={`Player_controls${playing[1] ? ' playing': ''}`}>
                                     <div className="Player_play">
                                          <button className="Player_button" onClick={() => handlePlay(1)}>
-                                             <span className="play">Play me 2</span>
-                                            <span className="pause">Pause me 2</span>
+                                             <span className="play"><img src={Play} alt="Play"/></span>
+                                             <span className="pause"><img src={Pause} alt="Play"/></span>
                                          </button>
                                     </div>
                                     <div className="Player_info">
                                         <div className="Player_title">
-                                            <span>Title of the song is this two</span>
-                                            <span className="Player--font-medium"><strong>by:</strong>Strongine asdnasd</span>
+                                            <span>Duel Of The Fates</span>
+                                            <span className="Player--font-medium Player--font-clear"><strong>by: </strong>John Williams</span>
                                         </div>
                                         <progress max={1} value={playedArray[1]}></progress>
                                     </div>
-
-
                                 </div>
                                   <div className="Player_media">
                                     <ReactPlayer
