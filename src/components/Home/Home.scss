@@ -16,12 +16,17 @@
     }
     &_text{
         text-transform: uppercase;
-        letter-spacing: 3px;
+        padding: 5px 0;
+        letter-spacing: 12px;
+        margin-right: -12px;
         color: $white;
     }
     &_image {
         display: flex;
         justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
     @-webkit-keyframes puff-in-center {
         0% {
