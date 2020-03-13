@@ -11,7 +11,7 @@ const Navigation = (props) => {
     let thisNav = useRef([]);
 
     useEffect(()=>{
-        TweenLite.from(thisNav.current, 0.5  , {y: -100, stagger: 0.3});
+        TweenLite.from(thisNav.current, 0.5  , {y: -100, opacity: "0",  stagger: 0.3});
     }, [])
     return (
         <div className="Navigation">
